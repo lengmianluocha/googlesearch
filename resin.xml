@@ -1,0 +1,18 @@
+<!-- - Resin 4.0 configuration file. -->
+<resin xmlns="http://caucho.com/ns/resin" xmlns:resin="urn:java:com.caucho.resin">
+	<cluster-default>
+		<resin:import path="classpath:META-INF/caucho/app-default.xml" />
+	</cluster-default>
+	<logger name="" level="info" />
+	<cluster id="">
+		<!-- define the servers in the cluster -->
+		<server id="">
+			<http port="8081" />
+		</server>
+		<!-- the default host, matching any host name -->
+		<host id="" root-directory=".">
+			<!-- - webapps can be overridden/extended in the resin.xml -->
+			<web-app id="/googlesearch" root-directory="webapps" />
+		</host>
+	</cluster>
+</resin>
